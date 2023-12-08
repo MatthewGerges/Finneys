@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finney's Pick For Me</title>
+<style>
+  body {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(67,67,67,1) 100%);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Change to column to align items vertically */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .logo {
+    max-width: 10%; /* Adjust size of the logo */
+    height: auto;
+    margin-bottom: 1rem; /* Adds space below the logo */
+  }
+  h1 {
+      font-size: 48px; /* Increase the font size */
+      line-height: 1.2; 
+      margin: 0 auto 20px; /* Center the heading */
+      text-align: center; /* Center the text */
+      white-space: pre-wrap; /* Ensures that line breaks are honored */
+    }
+    
+    .button {
+      background-image: url('paintStroke.png'); /* Add your image path here */
+      border: none;
+      background-color: transparent; /* Make button background transparent */
+      padding: 10px 20px;
+      text-transform: uppercase;
+      cursor: pointer;
+      margin-top: 20px;
+      font-family: 'DM Sans', sans-serif;
+      display: inline-block; /* To maintain the padding and background image */
+      background-size: contain; /* This will make sure the image fits within the button without being cropped */
+      background-position: center; /* This will center the image in the button */
+
+    }
+
+.button {
+  font-family: 'DM Sans', sans-serif;
+  padding: 30px 60px; /* Adjust the padding to make the button larger */
+
+}
+
+.image-below-button {
+  max-width: 100%; /* or any other size */
+  height: auto;
+  margin-top: 20px; /* Adjust the spacing as needed */
+}
+hl span {
+    display: block
+}
+  /* Add styles for the modal */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+    <img src="FinneysTransparent2.png" alt="Finney's Logo" class="logo">
+    
+    <div>
+        <h1>DON'T KNOW<br>WHAT TO EAT?</h1>          
+        <button id="myBtun" onclick="pickRandomLink()" class="button" >Pick for me</button>
+    </div>
+    <img src="BurgerBeerFries.png" alt="Descriptive Text" class="image-below-button">
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+        <span class="close">&times;</span>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/w1GS12OjzEE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+    
+    </div>
+
+    <script>
+    const links = [
+        'https://www.youtube.com/shorts/w1GS12OjzEE',
+        "https://www.instagram.com/p/C0hxpavA1Gx/",
+        "https://www.instagram.com/p/C0cmXB8Adu1/",
+        "https://www.instagram.com/p/C0XZgm8gvyi/",
+        "https://www.instagram.com/p/C0SRkGqASvR/",
+        "https://www.instagram.com/p/C0H_CDdAj_8/",
+        "https://www.instagram.com/p/C0C6UgsAKqC/",
+        "https://www.instagram.com/p/Cz9u7ecAnPc/",
+        "https://www.instagram.com/p/Cz4fI_mg6w0/",
+        "https://www.instagram.com/p/Cz9u7ecAnPc/",
+        "https://www.instagram.com/p/CzpJEoxgisS/",
+        "https://www.instagram.com/p/CzZnFrcAIl2/",
+        "https://www.instagram.com/p/CzUbt_ggggR/",
+        "https://www.instagram.com/p/CzKC0yAAuqj/",
+        "https://www.instagram.com/p/Cy1ZKpqxLLy/",
+        "https://www.instagram.com/p/CywUgtAADV0/",
+        // Add more links here
+      ];
+
+      function pickRandomLink() {
+        const randomIndex = Math.floor(Math.random() * links.length);
+        const randomLink = links[randomIndex];
+        window.open(randomLink, '_blank');
+      }
+      function pickForMe() {
+        console.log("Button clicked!");
+      }
+      // Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+    </script>
+
+</body>
+</html>
