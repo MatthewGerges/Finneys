@@ -5,33 +5,53 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Finney's Pick For Me</title>
 <style>
-  body {
-    text-align: center;
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(67,67,67,1) 100%);
-    color: #fff;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column; /* Change to column to align items vertically */
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
+body {
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('brick_background.jpg'); /* Replace with the path to your image */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Black mask with 50% opacity */
+  z-index: -1;
+}
+
   .logo {
-    max-width: 10%; /* Adjust size of the logo */
+    max-width: 20%; /* Adjust size of the logo */
     height: auto;
     margin-bottom: 1rem; /* Adds space below the logo */
   }
   h1 {
+      letter-spacing: 2px;
+      font-family: 'Times New Roman', Georgia; /* or 'Georgia', serif; */
+      /* other styles */
+      color: white;
       font-size: 48px; /* Increase the font size */
-      line-height: 1.2; 
+      line-height: 1.4; 
       margin: 0 auto 20px; /* Center the heading */
       text-align: center; /* Center the text */
       white-space: pre-wrap; /* Ensures that line breaks are honored */
     }
     
     .button {
+      color: #ab1f2d;
       background-image: url('paintStroke.png'); /* Add your image path here */
       border: none;
       background-color: transparent; /* Make button background transparent */
@@ -40,6 +60,8 @@
       cursor: pointer;
       margin-top: 20px;
       font-family: 'DM Sans', sans-serif;
+      font-size: 28px; /* Increase the font size */
+      font-weight: bold;
       display: inline-block; /* To maintain the padding and background image */
       background-size: contain; /* This will make sure the image fits within the button without being cropped */
       background-position: center; /* This will center the image in the button */
@@ -53,9 +75,9 @@
 }
 
 .image-below-button {
-  max-width: 100%; /* or any other size */
+  width: 80%; /* or any other size */
   height: auto;
-  margin-top: 20px; /* Adjust the spacing as needed */
+  margin-top: 0.1px; /* Adjust the spacing as needed */
 }
 hl span {
     display: block
@@ -171,6 +193,21 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+//Old body:
+// body {
+//     text-align: center;
+//     font-family: 'Arial', sans-serif;
+//     background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(67,67,67,1) 100%);
+//     color: #fff;
+//     margin: 0;
+//     padding: 0;
+//     display: flex;
+//     flex-direction: column; /* Change to column to align items vertically */
+//     justify-content: center;
+//     align-items: center;
+//     height: 100vh;
+//   }
     </script>
 
 </body>
